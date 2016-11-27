@@ -1,8 +1,8 @@
+
 package com.octest.servlets;
 
-
-
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +20,11 @@ public class Test extends HttpServlet {
         request.setAttribute("name", name);
         String[] noms = {"Mathieu", "Robert", "François"};
         request.setAttribute("noms", noms);
+        
+        Date date = new Date();
+        String dateString = date.toString();
+        //string date
+        request.setAttribute("dateString", dateString);
         this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
     }
 
